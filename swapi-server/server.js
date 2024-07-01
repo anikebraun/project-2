@@ -24,7 +24,7 @@ app.get("/api/planets", async (req, res) => {
     res.json(planets);
   } catch (err) {
     console.error("Error:", err);
-    res.status(500).send("error☹️");
+    res.status(500).send("error");
   }
 });
 
