@@ -9,7 +9,7 @@ const Home = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('hhtp://localhost:3000/api/characters').then(res => res.json());
+        const response = await fetch('http://localhost:3000/api/characters').then(res => res.json());
         setData(response); // assign JSON response to the data variable.
       } catch (error) {
         console.error("Error fetching records: ", error);
@@ -20,7 +20,7 @@ const Home = (props) => {
   }, []);
 
   const showCharacters = (characters) => {
-    return  data.map((character) => (
+    return  characters.map((character) => (
           <div key={character._id} data={character} >
             <Link to={`/characters/${character.id}`}>{character.name}</Link>
           </div>
@@ -35,9 +35,9 @@ const Home = (props) => {
       </label>
       <input
         id="searchString"
-        value={searchString}
+        //value={searchString}
         //onChange={handleInputChange}
-        autoComplete="off"
+        //autoComplete="off"
       />
       <section id="charactersList">
        {showCharacters(data)}
