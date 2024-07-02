@@ -71,7 +71,7 @@ app.get("/api/characters/:id", async (req, res) => {
     res.json(characters);
   } catch (err) {
     console.error("Error:", err);
-    res.status(500).send("error");
+    res.status(500).send("error :(");
   }
 });
 
